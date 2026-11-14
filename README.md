@@ -5,7 +5,7 @@ Trabalho individual. Duas telas feitas a partir dos wireframes do Figma: login e
 
 ## Como abrir
 
-Abra o `index.html` no navegador. O login de teste é:
+O site está no ar em https://recroffi.github.io/situacao-aprendizagem-2/. Também dá para abrir o `index.html` direto no navegador. O login de teste é:
 
 - E-mail: `marina.oliveira@exemplo.com`
 - Senha: `novaweb123`
