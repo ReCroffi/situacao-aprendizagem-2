@@ -1,15 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil - NovaWeb</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./assets/js/perfil.js"></script>
+  </head>
+  <body>
+    <div class="pagina">
+      <aside class="sidebar sidebar-perfil">
+        <span class="area"
+          ><span class="barrinha-marca"></span>Área Pessoal</span
+        >
+        <p class="rotulo-menu">Minha conta</p>
+        <nav>
+          <ul class="passos menu-perfil">
+            <li>
+              <a href="perfil.html" aria-current="page"
+                ><span class="barrinha"></span>Meu perfil</a
+              >
+            </li>
+            <li>
+              <a href="#"><span class="barrinha"></span>Segurança</a>
+            </li>
+            <li>
+              <a href="#"><span class="barrinha"></span>Preferências</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="passos sair">
+          <a href="index.html"><span class="barrinha"></span>Sair da conta</a>
+        </div>
+        <p class="fimpagina">SIMPLES. CONECTADO. SEU.</p>
+      </aside>
+      <div class="coluna">
+        <header class="topbar">
+          <p class="trilha">Minha conta / Meu perfil</p>
+          <div class="topbar-direita">
+            <input
+              class="busca"
+              type="search"
+              id="busca"
+              placeholder="Pesquisar na conta..."
+              aria-label="Pesquisar"
+            />
+            <a href="#">Ajuda</a>
+          </div>
+        </header>
+        <main class="conteudo-perfil">
+          <span class="titulo">03 / PERFIL</span>
+          <h1 class="titulo-pagina">Meu perfil</h1>
+          <p class="sub-pagina">
+            Gerencie suas informações pessoais e mantenha sua conta atualizada.
+          </p>
+          <section class="card card-foto">
+            <img
+              class="avatar"
+              id="avatar"
+              src="assets/img/avatar.webp"
+              alt="Foto de perfil de Marina Oliveira"
+              width="88"
+              height="88"
+            />
+            <div>
+              <p class="nome-usuario">Marina Oliveira</p>
+              <p class="email-usuario">marina.oliveira@exemplo.com</p>
+            </div>
+            <button
+              type="button"
+              class="botao botao-claro"
+              onclick="escolherFoto()"
+            >
+              Alterar foto
+            </button>
+            <input
+              type="file"
+              id="arquivo-foto"
+              accept="image/*"
+              onchange="trocarFoto()"
+              hidden
+            />
+          </section>
+          <form name="perfil" onsubmit="return salvarPerfil();">
+            <section class="card card-campos">
+              <div class="card-topo">
+                <div>
+                  <h2 class="titulo-card">Informações pessoais</h2>
+                  <p class="sub-card">Seus dados de identificação e contato.</p>
+                </div>
+                <button
+                  type="button"
+                  class="botao botao-destaque"
+                  onclick="editarPerfil()"
+                >
+                  Editar
+                </button>
+              </div>
+              <div class="campo-grupo">
+                <label for="nome">Nome completo</label>
+                <input
+                  class="campo"
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  autocomplete="name"
+                  value="Marina Oliveira"
+                  readonly
+                />
+              </div>
+              <div class="linha-campos">
+                <div class="campo-grupo">
+                  <label for="email">E-mail</label>
+                  <input
+                    class="campo"
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    value="marina.oliveira@exemplo.com"
+                    aria-describedby="nota-email"
+                    readonly
+                  />
+                </div>
+                <div class="campo-grupo">
+                  <label for="telefone">Telefone (opcional)</label>
+                  <input
+                    class="campo"
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    autocomplete="tel"
+                    value="(11) 99999-9999"
+                    readonly
+                  />
+                </div>
+              </div>
+              <p class="nota" id="nota-email">
+                Seu e-mail é utilizado para acessar a conta.
+              </p>
+            </section>
+            <div class="acoes">
+              <p class="texto-acoes">Revise seus dados antes de salvar.</p>
+              <div class="botoes">
+                <button
+                  type="button"
+                  class="botao botao-claro"
+                  onclick="cancelarEdicao()"
+                >
+                  Cancelar
+                </button>
+                <button type="submit" class="botao botao-destaque">
+                  Salvar alterações
+                </button>
+              </div>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>
