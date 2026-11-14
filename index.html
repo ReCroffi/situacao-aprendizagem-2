@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="./assets/js/login.js"></script>
   </head>
 
   <body>
@@ -55,14 +56,20 @@
           <h1 class="boas-vindas">Boas-vindas de volta</h1>
           <p class="sub-boas-vindas">Entre com seus dados para continuar.</p>
         </header>
-        <form class="login" action="perfil.html" method="get">
+        <form
+          class="login"
+          name="login"
+          action="perfil.html"
+          method="get"
+          onsubmit="return validarLogin();"
+        >
           <label for="email">E-mail</label>
           <input
             type="email"
             name="email"
             id="email"
             placeholder="voce@exemplo.com"
-            required  
+            required
           />
           <label for="senha">Senha</label>
           <input
